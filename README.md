@@ -1,11 +1,83 @@
-# React + TypeScript + Vite
+# MCC Landing Site
+
+A React-based landing site built with Vite, TypeScript, and Tailwind CSS.
+
+## Development
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+### Installation
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```bash
+npm install
+```
+
+### Development Server
+
+```bash
+npm run dev
+```
+
+### Build
+
+```bash
+npm run build
+```
+
+### Preview Build
+
+```bash
+npm run preview
+```
+
+## GitHub Pages Deployment
+
+This project is configured for GitHub Pages deployment. The build process creates production files in the `dist` folder, which is used as the source for GitHub Pages.
+
+### Setup Instructions
+
+1. **Build the Project**: Run `npm run build` to generate the production files in the `dist` folder.
+
+2. **Configure GitHub Pages**: 
+   - Go to your repository settings on GitHub
+   - Navigate to "Pages" in the sidebar
+   - Set the source to "Deploy from a branch"
+   - Select the branch containing your code (usually `main`)
+   - Set the folder to `/ (root)` and ensure the `dist` folder is committed to your repository
+   
+   Alternatively, for GitHub Actions deployment:
+   - Set the source to "GitHub Actions"
+   - The build artifacts from the `dist` folder will be automatically deployed
+
+3. **Important Files**:
+   - `.nojekyll`: Included in the `dist` folder to prevent GitHub Pages from processing the site with Jekyll
+   - The `dist` folder contains all the production-ready files for deployment
+
+### Deployment Workflow
+
+1. Make your changes to the source code
+2. Run `npm run build` to generate updated production files
+3. Commit and push the changes including the updated `dist` folder
+4. GitHub Pages will automatically deploy the updated site
+
+### Local Testing
+
+Before deploying, you can test the production build locally:
+
+```bash
+npm run build
+npm run preview
+```
+
+This will serve the built files from the `dist` folder on a local development server.
+
+## Technologies Used
+
+- React 19.1.0
+- TypeScript 5.8.3
+- Vite 7.0.4
+- Tailwind CSS 4.1.11
+- React Router DOM 7.7.0
 
 ## Expanding the ESLint configuration
 
