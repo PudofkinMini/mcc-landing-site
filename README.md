@@ -48,6 +48,8 @@ This project is configured for GitHub Pages deployment. The build process create
    Alternatively, for GitHub Actions deployment:
    - Set the source to "GitHub Actions"
    - The build artifacts from the `dist` folder will be automatically deployed
+   - The included workflow `.github/workflows/deploy.yml` builds the site and
+     publishes the `dist` directory to the `gh-pages` branch.
 
 3. **Important Files**:
    - `.nojekyll`: Included in the `dist` folder to prevent GitHub Pages from processing the site with Jekyll
