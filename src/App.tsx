@@ -17,7 +17,7 @@ import logo from './assets/MCCLogo.png'
 const getPageTitle = (pathname: string): string => {
   switch (pathname) {
     case '/':
-      return 'Home'
+      return ''
     case '/our-story':
       return 'Our Story'
     case '/corporate-overview':
@@ -37,7 +37,7 @@ const getPageTitle = (pathname: string): string => {
     case '/book-a-demo':
       return 'Book a Demo'
     default:
-      return 'MCC'
+      return ''
   }
 }
 
