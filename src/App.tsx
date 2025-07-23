@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom'
+import { useState, useLayoutEffect } from 'react'
+import { BrowserRouter as Router, Routes, Route, Link, useLocation, ScrollRestoration } from 'react-router-dom'
 
 import Home from './routes/Home'
 import OurStory from './routes/OurStory'
@@ -51,6 +51,9 @@ const NavigationContent = () => {
   const [isAboutDropdownOpen, setIsAboutDropdownOpen] = useState(false)
   const location = useLocation()
   const currentPageTitle = getPageTitle(location.pathname)
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0)
+  }, [location.pathname])
 
   const isActivePath = (path: string) => location.pathname === path
   const isAboutPath = () => ['/our-story', '/corporate-overview', '/partners', '/careers'].includes(location.pathname)
@@ -277,7 +280,7 @@ const NavigationContent = () => {
               <p className="text-left text-sm text-white break-words">Sign up for industry news, updates from MCC and invitations to special events.</p>
               <div className="flex">
                 <input type="email" placeholder="Email" className="w-full text-sm p-2 rounded-l-md bg-white text-black" />
-                <button className="bg-primary-yellow text-white px-2 py-1 rounded-r-md">Join</button>
+                <button className="bg-primary-yellow text-white text-sm px-2 py-1 rounded-r-md">Join</button>
               </div>
             </div>
 
@@ -288,6 +291,7 @@ const NavigationContent = () => {
           </div>
         </div>
       </div>
+      {/* <ScrollRestoration /> */}
     </div>
   )
 }
@@ -296,6 +300,7 @@ const App = () => {
   return (
     <Router>
       <NavigationContent />
+      
     </Router>
   )
 }

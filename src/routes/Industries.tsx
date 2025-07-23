@@ -7,7 +7,8 @@ import deviceMaintenance from '../assets/device_maintenance.jpg'
 import roofing from '../assets/roofing.jpg'
 import chainCustody from '../assets/chain_custody.jpg'
 import biohazard from '../assets/biohazard.jpg'
-import pileOfScrubs from '../assets/pile_of_scrubs.png'
+// import pileOfScrubs from '../assets/pile_of_scrubs.png'
+import truck from '../assets/truck.png'
 import uniforms from '../assets/uniforms.jpg'
 
 interface IndustryData {
@@ -107,7 +108,7 @@ const industriesData: IndustryData[] = [
     id: 'document-shredding',
     name: 'Document Shredding Services',
     description: 'Secure document destruction service management with complete tracking and compliance documentation capabilities.',
-    image: pileOfScrubs,
+    image: truck,
     features: [
       'Service route optimization',
       'Certificate of destruction',

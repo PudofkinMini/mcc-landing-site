@@ -2,8 +2,9 @@ import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import world from '../assets/world.jpg'
 import customerHappy from '../assets/customer_happy.jpg'
-import assetTracking from '../assets/asset_tracking.png'
+import chainOfCustody from '../assets/chain_custody.jpg'
 import truck from '../assets/truck.png'
+import abstract from '../assets/abstract.jpg'
 import { IndustryCard } from '../components/IndustryCard'
 
 const MLINX = () => {
@@ -162,18 +163,32 @@ const MLINX = () => {
       </div>
 
       {/* Core Modules Section */}
-      <div className="bg-gray-50 py-16 lg:py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+      <div className="p-4 py-16 lg:p-20 relative mx-auto w-[95%] lg:w-9/10"
+        style={{
+          // background: `linear-gradient(135deg, #F4B92F 0%, #616163 100%)`,
+        }}
+      >
+        {/* Background texture overlay */}
+        <div 
+          className="absolute inset-0 -z-0 blur-0 bg-clip rounded-lg brightness-80"
+          style={{
+            backgroundImage: `url(${abstract})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+          }}
+        />
+        <div className="w-full relative z-10">
+          <div className="w-full text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
               M-LINX™ Core Modules
             </h2>
-            <p className="text-lg lg:text-xl text-gray-700 leading-relaxed">
+            <p className="text-lg lg:text-xl text-white font-semibold leading-relaxed">
               Our integrated suite of applications works together to optimize every aspect of your field operations.
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 mx-auto w-full">
             {/* Route Manager */}
             <div className="bg-white p-8 rounded-lg shadow-lg">
               <h3 className="text-2xl font-semibold text-gray-900 mb-4">Route Manager</h3>
@@ -282,53 +297,53 @@ const MLINX = () => {
       </div>
 
       {/* Industry Applications */}
-      <div className="container mx-auto px-4 py-16 lg:py-20">
-        <div className="max-w-4xl mx-auto text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-            Industry Applications
-          </h2>
-          <p className="text-lg lg:text-xl text-gray-700 leading-relaxed">
-            M-LINX™ is designed to meet the specific needs of various service industries with customizable workflows and industry-specific features.
-          </p>
-        </div>
-
-        <div className="flex flex-wrap gap-8 items-center justify-center mb-16">
-          <IndustryCard 
-            image={truck} 
-            name="Route Accounting for Linen and Textile Rental" 
-            className="hover:shadow-lg w-80 h-60 shadow rounded-lg p-6 cursor-pointer transition-all duration-300" 
-          />
-          <IndustryCard 
-            image={assetTracking} 
-            name="Asset Tracking and Chain of Custody" 
-            className="hover:shadow-lg w-80 h-60 shadow rounded-lg p-6 cursor-pointer transition-all duration-300" 
-          />
-        </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          <div className="bg-primary-yellow/5 border border-primary-yellow/20 p-6 rounded-lg">
-            <h4 className="font-semibold text-gray-900 mb-2">HVAC Services</h4>
-            <p className="text-sm text-gray-700">Optimize technician routes and manage service appointments efficiently.</p>
+      <div className="mt-8 rounded-t-2xl bg-gray-100">
+        <div className="container mx-auto px-4 py-16 lg:py-20">
+          <div className="max-w-4xl mx-auto text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+              Industry Applications
+            </h2>
+            <p className="text-lg lg:text-xl text-gray-700 leading-relaxed">
+              M-LINX™ is designed to meet the specific needs of various service industries with customizable workflows and industry-specific features.
+            </p>
           </div>
-          <div className="bg-primary-yellow/5 border border-primary-yellow/20 p-6 rounded-lg">
-            <h4 className="font-semibold text-gray-900 mb-2">Equipment Rental</h4>
-            <p className="text-sm text-gray-700">Track equipment location, maintenance schedules, and rental agreements.</p>
+          <div className="flex flex-wrap gap-8 items-center justify-center mb-16">
+            <IndustryCard
+              image={truck}
+              name="Route Accounting for Linen and Textile Rental"
+              className="hover:shadow-lg w-80 h-60 shadow rounded-lg p-6 cursor-pointer transition-all duration-300"
+            />
+            <IndustryCard
+              image={chainOfCustody}
+              name="Asset Tracking and Chain of Custody"
+              className="hover:shadow-lg w-80 h-60 shadow rounded-lg p-6 cursor-pointer transition-all duration-300"
+            />
           </div>
-          <div className="bg-primary-yellow/5 border border-primary-yellow/20 p-6 rounded-lg">
-            <h4 className="font-semibold text-gray-900 mb-2">Medical Waste</h4>
-            <p className="text-sm text-gray-700">Ensure compliance with automated tracking and documentation.</p>
-          </div>
-          <div className="bg-primary-yellow/5 border border-primary-yellow/20 p-6 rounded-lg">
-            <h4 className="font-semibold text-gray-900 mb-2">Document Shredding</h4>
-            <p className="text-sm text-gray-700">Maintain security protocols with chain of custody tracking.</p>
-          </div>
-          <div className="bg-primary-yellow/5 border border-primary-yellow/20 p-6 rounded-lg">
-            <h4 className="font-semibold text-gray-900 mb-2">Restoration Services</h4>
-            <p className="text-sm text-gray-700">Coordinate emergency response and track project progress.</p>
-          </div>
-          <div className="bg-primary-yellow/5 border border-primary-yellow/20 p-6 rounded-lg">
-            <h4 className="font-semibold text-gray-900 mb-2">Appliance Repair</h4>
-            <p className="text-sm text-gray-700">Schedule service calls and track parts inventory in real-time.</p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            <div className="bg-primary-yellow/5 border border-primary-yellow/20 p-6 rounded-lg">
+              <h4 className="font-semibold text-gray-900 mb-2">HVAC Services</h4>
+              <p className="text-sm text-gray-700">Optimize technician routes and manage service appointments efficiently.</p>
+            </div>
+            <div className="bg-primary-yellow/5 border border-primary-yellow/20 p-6 rounded-lg">
+              <h4 className="font-semibold text-gray-900 mb-2">Equipment Rental</h4>
+              <p className="text-sm text-gray-700">Track equipment location, maintenance schedules, and rental agreements.</p>
+            </div>
+            <div className="bg-primary-yellow/5 border border-primary-yellow/20 p-6 rounded-lg">
+              <h4 className="font-semibold text-gray-900 mb-2">Medical Waste</h4>
+              <p className="text-sm text-gray-700">Ensure compliance with automated tracking and documentation.</p>
+            </div>
+            <div className="bg-primary-yellow/5 border border-primary-yellow/20 p-6 rounded-lg">
+              <h4 className="font-semibold text-gray-900 mb-2">Document Shredding</h4>
+              <p className="text-sm text-gray-700">Maintain security protocols with chain of custody tracking.</p>
+            </div>
+            <div className="bg-primary-yellow/5 border border-primary-yellow/20 p-6 rounded-lg">
+              <h4 className="font-semibold text-gray-900 mb-2">Restoration Services</h4>
+              <p className="text-sm text-gray-700">Coordinate emergency response and track project progress.</p>
+            </div>
+            <div className="bg-primary-yellow/5 border border-primary-yellow/20 p-6 rounded-lg">
+              <h4 className="font-semibold text-gray-900 mb-2">Appliance Repair</h4>
+              <p className="text-sm text-gray-700">Schedule service calls and track parts inventory in real-time.</p>
+            </div>
           </div>
         </div>
       </div>

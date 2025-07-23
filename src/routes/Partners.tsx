@@ -1,4 +1,9 @@
 import placeholderLogo from '../assets/placeholder_logo.jpg'
+import microsoftPartners from '../assets/microsoft_partner_logo.png'
+import dna from '../assets/dna.jpg'
+import android from '../assets/android_dev.jpg'
+import moneris from '../assets/moneris_logo.jpg'
+import trsa from '../assets/trsa_logo.jpg'
 
 const Partners = () => {
   return (
@@ -10,7 +15,7 @@ const Partners = () => {
 
       <div className="flex flex-col gap-6 max-w-3xl mx-auto">
         <div className="flex gap-4 bg-gray-50 p-6 rounded-lg items-start">
-          <img src={placeholderLogo} alt="Microsoft logo" className="w-12 h-12 object-contain" />
+          <img src={microsoftPartners} alt="Microsoft logo" className="w-12 lg:w-16 object-contain" />
           <p className="text-gray-700 text-sm lg:text-base">
             Founded in 1975, Microsoft is a worldwide leader in software, services and Internet technologies. MCC has relied on Microsoft platforms for more than a decade, using them as the cornerstone of our solutions.
             <br />
@@ -19,7 +24,7 @@ const Partners = () => {
         </div>
 
         <div className="flex gap-4 bg-white border border-gray-200 p-6 rounded-lg items-start">
-          <img src={placeholderLogo} alt="DNA Evolutions logo" className="w-12 h-12 object-contain" />
+          <img src={dna} alt="DNA Evolutions logo" className="w-12 lg:w-16 object-contain" />
           <p className="text-gray-700 text-sm lg:text-base">
             Worldwide DNA partners use DNA's scheduling and rapid decisioning technology, JOpt, for strategic and operational workforce planning. Mobile Computing Corp. Inc. integrates DNA modules to offer advanced resource planning and route optimization.
             <br />
@@ -28,14 +33,14 @@ const Partners = () => {
         </div>
 
         <div className="flex gap-4 bg-gray-50 p-6 rounded-lg items-start">
-          <img src={placeholderLogo} alt="Android logo" className="w-12 h-12 object-contain" />
+          <img src={android} alt="Android logo" className="w-12 lg:w-16 object-contain" />
           <p className="text-gray-700 text-sm lg:text-base">
             Android powers millions of devices worldwide. MCC's M-LINX™ application harnesses the Android platform, giving customers access to the latest smartphone and tablet features.
           </p>
         </div>
 
         <div className="flex gap-4 bg-white border border-gray-200 p-6 rounded-lg items-start">
-          <img src={placeholderLogo} alt="Moneris logo" className="w-12 h-12 object-contain" />
+          <img src={moneris} alt="Moneris logo" className="w-12 lg:w-16 object-contain" />
           <p className="text-gray-700 text-sm lg:text-base">
             Moneris processes billions of card transactions each year for merchants across North America. Partnering with Moneris keeps MCC customers at the forefront of secure payment innovation.
             <br />
@@ -44,7 +49,7 @@ const Partners = () => {
         </div>
 
         <div className="flex gap-4 bg-gray-50 p-6 rounded-lg items-start">
-          <img src={placeholderLogo} alt="TRSA logo" className="w-12 h-12 object-contain" />
+          <img src={trsa} alt="TRSA logo" className="w-12 h-12 object-contain" />
           <p className="text-gray-700 text-sm lg:text-base">
             TRSA member commercial laundries provide hygienic and sustainable services to millions every day. TRSA promotes and protects its members while educating industry leaders.
             <br />
