@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import world from '../assets/world.jpg'
+import customerHappy from '../assets/customer_happy.jpg'
+import soil from '../assets/soil.jpg'
+import uniforms from '../assets/uniforms.jpg'
 
 interface CarouselItem {
-  imageFilename: string
+  image: string
   title: string
   description: string
   button: {
@@ -16,7 +20,7 @@ interface CarouselItem {
 // Hard-coded carousel data
 const carouselData: CarouselItem[] = [
   {
-    imageFilename: 'world.jpg',
+    image: world,
     title: 'Industry-Specific Solutions',
     description: 'Our enterprise-grade mobile workforce management application suite is built for the modern Linen and Textile Industry.',
     button: {
@@ -27,7 +31,7 @@ const carouselData: CarouselItem[] = [
     }
   },
   {
-    imageFilename: 'customer_happy.jpg', 
+    image: customerHappy,
     title: 'Service ↑, Costs ↓',
     description: 'Our optimized field worker solutions will keep your customers happy and your costs down.',
     button: {
@@ -38,7 +42,7 @@ const carouselData: CarouselItem[] = [
     }
   },
   {
-    imageFilename: 'soil.jpg',
+    image: soil,
     title: 'Custom Solutions',
     description: 'We understand that every business is unique. Which is why we offer custom solutions to meet your specific needs.',
     button: {
@@ -49,7 +53,7 @@ const carouselData: CarouselItem[] = [
     }
   },  
   {
-    imageFilename: 'uniforms.jpg',
+    image: uniforms,
     title: 'Be there on time, every time.',
     description: 'Our optimized routing and scheduling software ensures that your deliveries will be made efficiently and promptly.',
     button: {
@@ -167,8 +171,8 @@ export const HomeCarousel = () => {
             {/* Background Image */}
             <div 
               className="absolute inset-0 bg-cover bg-center bg-no-repeat filter brightness-80"
-              style={{ 
-                backgroundImage: `url('/src/assets/${item.imageFilename}')`,
+              style={{
+                backgroundImage: `url(${item.image})`,
 
               }}
             >
