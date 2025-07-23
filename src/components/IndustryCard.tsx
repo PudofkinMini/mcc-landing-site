@@ -1,5 +1,3 @@
-import React from 'react'
-
 interface IndustryCardProps {
   image: string
   name: string

@@ -1,4 +1,3 @@
-import React from 'react'
 import corporate from '../assets/corporate.jpeg'
 
 const CorporateOverview = () => {

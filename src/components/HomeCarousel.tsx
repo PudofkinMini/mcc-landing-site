@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import uniforms from '../assets/uniforms.jpg'
 
 interface CarouselItem {
   imageFilename: string
