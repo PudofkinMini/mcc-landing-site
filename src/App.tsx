@@ -1,5 +1,5 @@
 import { useState, useLayoutEffect } from 'react'
-import { BrowserRouter as Router, Routes, Route, Link, useLocation, ScrollRestoration } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom'
 
 import Home from './routes/Home'
 import OurStory from './routes/OurStory'

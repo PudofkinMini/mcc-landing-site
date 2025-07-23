@@ -1,4 +1,3 @@
-import placeholderLogo from '../assets/placeholder_logo.jpg'
 import microsoftPartners from '../assets/microsoft_partner_logo.png'
 import dna from '../assets/dna.jpg'
 import android from '../assets/android_dev.jpg'
