@@ -1,7 +1,49 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/outline'
 
 const Services = () => {
+  const [openService, setOpenService] = useState<number | null>(null)
+
+  const services = [
+    {
+      title: "Consulting on Solution Integration",
+      description: "Expert guidance on integrating mobile workforce solutions into your existing business processes and technology infrastructure. Our consultants work closely with your team to design optimal workflows and ensure seamless integration."
+    },
+    {
+      title: "Customer Experience Services", 
+      description: "Comprehensive services focused on enhancing customer satisfaction through improved field service delivery, real-time communication, and streamlined service processes that exceed customer expectations."
+    },
+    {
+      title: "Deployment Support",
+      description: "Full deployment assistance from initial planning through go-live and beyond. Our experienced team manages the entire rollout process, ensuring minimal disruption to your operations while maximizing adoption rates."
+    },
+    {
+      title: "Training Services",
+      description: "Comprehensive training programs designed to empower your team with the knowledge and skills needed to maximize the value of your mobile workforce solution. Includes user training, administrator training, and ongoing support."
+    },
+    {
+      title: "Hosting Facilities Management",
+      description: "Secure, reliable hosting infrastructure management with 24/7 monitoring, backup services, and scalable resources to ensure your mobile workforce platform operates at peak performance."
+    },
+    {
+      title: "Development Engineering Services",
+      description: "Custom development and engineering services to extend platform capabilities, create specialized integrations, and build tailored solutions that meet your unique business requirements."
+    },
+    {
+      title: "Integration Services",
+      description: "Professional integration services to connect your mobile workforce platform with existing ERP, CRM, accounting, and other business systems, ensuring seamless data flow and operational efficiency."
+    },
+    {
+      title: "Hardware and Enterprise Support Services",
+      description: "Comprehensive hardware support including device management, troubleshooting, replacement services, and enterprise-level technical support to keep your mobile workforce equipped and operational."
+    }
+  ]
+
+  const toggleService = (index: number) => {
+    setOpenService(openService === index ? null : index)
+  }
+
   // Set page title and meta description for SEO
   useEffect(() => {
     document.title = 'Services - Mobile Workforce Management Solutions | MCC'
@@ -44,6 +86,70 @@ const Services = () => {
             Comprehensive mobile workforce management solutions designed to enhance customer service 
             and reduce operating costs across multiple industries.
           </p>
+        </div>
+      </div>
+
+      {/* Main Services Description */}
+      <div className="container mx-auto px-4">
+        <div className="max-w-4xl mx-auto text-center">
+          <p className="text-lg lg:text-xl text-gray-700 leading-relaxed">
+            The successful selection, creation, deployment and support of a real-time mobile workforce automation solution require the delicate balance of people, process and technology.
+          </p>
+          <p className="text-lg lg:text-xl text-gray-700 leading-relaxed mt-6">
+            At MCC we understand that the software and hardware elements are only a few elements of the entire solution.
+            For this reason, MCC has developed expertise in a full range of professional services which will not only assist but guide your organization from project initiation through to day to day support once the project has been rolled out.
+            Our theory is to provide a partnership which evolves with the needs of personnel and technology over time.
+          </p>
+        </div>
+      </div>
+
+      {/* Professional Services Dropdowns */}
+      <div className="container mx-auto px-4">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl lg:text-4xl font-bold text-center text-primary-gray mb-12">
+            Professional Services
+          </h2>
+          
+          <div className="space-y-4">
+            {services.map((service, index) => (
+              <div key={index} className="border border-gray-200 rounded-lg shadow-sm overflow-hidden">
+                <button
+                  onClick={() => toggleService(index)}
+                  className="w-full px-6 py-4 text-left bg-white hover:bg-gray-50 transition-colors duration-200 flex items-center justify-between focus:outline-none focus:ring-2 focus:ring-primary-yellow focus:ring-inset"
+                  aria-expanded={openService === index}
+                  aria-controls={`service-content-${index}`}
+                >
+                  <h3 className="text-lg lg:text-xl font-semibold text-primary-gray">
+                    {service.title}
+                  </h3>
+                  <div className="flex-shrink-0 ml-4">
+                    {openService === index ? (
+                      <ChevronUpIcon className="w-6 h-6 text-primary-yellow transition-transform duration-200" />
+                    ) : (
+                      <ChevronDownIcon className="w-6 h-6 text-primary-yellow transition-transform duration-200" />
+                    )}
+                  </div>
+                </button>
+                
+                <div
+                  id={`service-content-${index}`}
+                  className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                    openService === index 
+                      ? 'max-h-screen opacity-100' 
+                      : 'max-h-0 opacity-0'
+                  }`}
+                >
+                  {openService === index && (
+                    <div className="px-6 py-4 bg-gray-50 border-t border-gray-200">
+                      <p className="text-gray-700 leading-relaxed">
+                        {service.description}
+                      </p>
+                    </div>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
