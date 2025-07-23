@@ -1,1 +1,28 @@
 @import "tailwindcss";
+
+@theme {
+  /* Custom Colours */
+  --color-primary-gray: #616163;
+  --color-primary-yellow: #F4B92F;
+
+  /* Custom Shadows */
+  --shadow-md-bottom: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+
+  /* Custom Fonts */
+  --font-sans: "Inter", sans-serif;
+  --font-serif: "Merriweather", serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --font-script: Great Vibes, cursive;
+  --font-jost: Jost, sans-serif;
+  --font-roboto: Roboto, sans-serif;
+
+  /* Custom Font Sizes */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+
+  /* Custom Transitions */
+  --transition-size: scale 0.2s ease-in-out;
+   /* Growing Underline */
+   --growing-underline: border-b-2 border-black border-b-inset;
+}
