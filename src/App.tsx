@@ -5,6 +5,7 @@ import Home from './routes/Home'
 import OurStory from './routes/OurStory'
 import Contact from './routes/Contact'
 import Industries from './routes/Industries'
+import IndustryDetail from './routes/IndustryDetail'
 import Services from './routes/Services'
 import MLINX from './routes/MLINX'
 import BookADemo from './routes/BookADemo'
@@ -37,6 +38,10 @@ const getPageTitle = (pathname: string): string => {
     case '/book-a-demo':
       return 'Book a Demo'
     default:
+      // Handle industry detail pages
+      if (pathname.startsWith('/industries/')) {
+        return 'Industries'
+      }
       return ''
   }
 }
@@ -49,6 +54,7 @@ const NavigationContent = () => {
 
   const isActivePath = (path: string) => location.pathname === path
   const isAboutPath = () => ['/our-story', '/corporate-overview', '/partners', '/careers'].includes(location.pathname)
+  const isIndustriesPath = () => location.pathname === '/industries' || location.pathname.startsWith('/industries/')
 
   return (
     <div className={`min-h-screen font-mono`}>
@@ -125,7 +131,7 @@ const NavigationContent = () => {
               </Link>
               <Link 
                 to="/industries" 
-                className={`transition-colors p-2 hover:bg-gray-100 rounded-md ${isActivePath('/industries') ? 'bg-gray-100' : ''}`}
+                className={`transition-colors p-2 hover:bg-gray-100 rounded-md ${isIndustriesPath() ? 'bg-gray-100' : ''}`}
               >
                 Industries
               </Link>
@@ -205,6 +211,7 @@ const NavigationContent = () => {
           <Route path="/our-story" element={<OurStory />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/industries" element={<Industries />} />
+          <Route path="/industries/:industryId" element={<IndustryDetail />} />
           <Route path="/services" element={<Services />} />
           <Route path="/mlinx" element={<MLINX />} />
           <Route path="/book-a-demo" element={<BookADemo />} />
@@ -244,15 +251,15 @@ const NavigationContent = () => {
             {/* Industries */}
             <div className="flex flex-col items-start py-8 px-4 gap-2 max-w-xs">
               <Link to="/industries" className="text-left text-sm text-white/50 mb-4">INDUSTRIES</Link>
-              <Link to="/industries" className="text-left text-sm text-white hover:underline break-words">Route Accounting for Linen and Textile Rental Industry</Link>
-              <Link to="/industries" className="text-left text-sm text-white hover:underline break-words">HVAC Repair</Link>
-              <Link to="/industries" className="text-left text-sm text-white hover:underline break-words">Appliance Repair</Link>
-              <Link to="/industries" className="text-left text-sm text-white hover:underline break-words">Disaster, Restoration and Recovery Services</Link>
-              <Link to="/industries" className="text-left text-sm text-white hover:underline break-words">Equipment Maintenance and Rental Services</Link>
-              <Link to="/industries" className="text-left text-sm text-white hover:underline break-words">Roofing Repair & Dispatch Services</Link>
-              <Link to="/industries" className="text-left text-sm text-white hover:underline break-words">Chain of Custody Asset Tracking</Link>
-              <Link to="/industries" className="text-left text-sm text-white hover:underline break-words">Document Shredding Services</Link>
-              <Link to="/industries" className="text-left text-sm text-white hover:underline break-words">Medical Waste – Mobile Pickup and Tracking Solution</Link>
+              <Link to="/industries/linen-textile-rental" className="text-left text-sm text-white hover:underline break-words">Route Accounting for Linen and Textile Rental Industry</Link>
+              <Link to="/industries/hvac-repair" className="text-left text-sm text-white hover:underline break-words">HVAC Repair</Link>
+              <Link to="/industries/appliance-repair" className="text-left text-sm text-white hover:underline break-words">Appliance Repair</Link>
+              <Link to="/industries/disaster-restoration-recovery" className="text-left text-sm text-white hover:underline break-words">Disaster, Restoration and Recovery Services</Link>
+              <Link to="/industries/equipment-maintenance-rental" className="text-left text-sm text-white hover:underline break-words">Equipment Maintenance and Rental Services</Link>
+              <Link to="/industries/roofing-repair-dispatch" className="text-left text-sm text-white hover:underline break-words">Roofing Repair & Dispatch Services</Link>
+              <Link to="/industries/chain-custody-asset-tracking" className="text-left text-sm text-white hover:underline break-words">Chain of Custody Asset Tracking</Link>
+              <Link to="/industries/document-shredding" className="text-left text-sm text-white hover:underline break-words">Document Shredding Services</Link>
+              <Link to="/industries/medical-waste-tracking" className="text-left text-sm text-white hover:underline break-words">Medical Waste – Mobile Pickup and Tracking Solution</Link>
             </div>
             {/* Contact Information */}
             <div className="flex flex-col items-start py-8 px-4 gap-2">
