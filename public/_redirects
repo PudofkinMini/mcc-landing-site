@@ -1,0 +1,11 @@
+/contact /#contact 301
+/book-a-demo /#contact 301
+/mlinx /#route-accounting 301
+/services /#route-accounting 301
+/industries /#company 301
+/industries/route-accounting-for-linen-and-textile-rental-industry /#route-accounting 301
+/industries/* /#company 301
+/our-story /#company 301
+/corporate-overview /#company 301
+/partners /#company 301
+/careers /#contact 301
