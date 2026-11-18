@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "include": [
+    "/",
+    "/products",
+    "/products/",
+    "/industries",
+    "/industries/",
+    "/services",
+    "/services/",
+    "/contact",
+    "/contact/",
+    "/operations",
+    "/operations/",
+    "/customer-portal",
+    "/customer-portal/",
+    "/mobileworker",
+    "/mobileworker/",
+    "/integrations",
+    "/integrations/",
+    "/laundry",
+    "/laundry/",
+    "/records",
+    "/records/",
+    "/about",
+    "/about/"
+  ],
+  "exclude": []
+}
